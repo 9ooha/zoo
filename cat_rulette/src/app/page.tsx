@@ -6,14 +6,14 @@ import { SegmentEditor } from './components/SegmentEditor';
 import { WinnerBanner } from './components/WinnerBanner';
 
 const SEGMENT_COLORS = [
-  '#8B0000',
-  '#1B4332',
-  '#1A237E',
-  '#4A148C',
-  '#BF360C',
-  '#004D40',
-  '#0D47A1',
-  '#880E4F',
+  '#FFB3BA',
+  '#BAFFC9',
+  '#BAE1FF',
+  '#E8BAFF',
+  '#FFDFBA',
+  '#FFFFBA',
+  '#FFB3DE',
+  '#B5EAD7',
 ];
 
 const DEFAULT_SEGMENTS = [
@@ -38,23 +38,21 @@ export default function Page() {
   return (
     <main
       className="min-h-screen flex flex-col items-center py-10 px-4 relative overflow-hidden"
-      style={{
-        background: 'radial-gradient(ellipse at top, #1a0a2e 0%, #030712 50%, #000510 100%)',
-      }}
+      style={{ background: '#ffffff' }}
     >
-      {/* Background decorative stars */}
+      {/* Background decorative dots */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {Array.from({ length: 50 }).map((_, i) => (
+        {Array.from({ length: 30 }).map((_, i) => (
           <div
             key={i}
             className="absolute rounded-full"
             style={{
-              width: i % 5 === 0 ? 2 : 1,
-              height: i % 5 === 0 ? 2 : 1,
-              background: '#FFD700',
+              width: i % 5 === 0 ? 6 : 4,
+              height: i % 5 === 0 ? 6 : 4,
+              background: ['#FFB3BA', '#BAFFC9', '#BAE1FF', '#E8BAFF', '#FFDFBA'][i % 5],
               left: `${(i * 19.7 + 3) % 100}%`,
               top: `${(i * 13.3 + 7) % 100}%`,
-              opacity: 0.1 + (i % 5) * 0.1,
+              opacity: 0.25,
             }}
           />
         ))}
@@ -64,7 +62,7 @@ export default function Page() {
       <header className="mb-10 text-center relative z-10">
         <div
           className="text-xs tracking-[0.5em] uppercase mb-2"
-          style={{ color: 'rgba(255,215,0,0.5)', fontFamily: 'var(--font-cinzel)' }}
+          style={{ color: '#C9A9E9', fontFamily: 'var(--font-cinzel)' }}
         >
           ✦ ✦ ✦
         </div>
@@ -72,11 +70,10 @@ export default function Page() {
           className="text-5xl md:text-6xl font-black leading-none"
           style={{
             fontFamily: 'var(--font-cinzel)',
-            background: 'linear-gradient(180deg, #FFF8DC 0%, #FFD700 40%, #B8860B 100%)',
+            background: 'linear-gradient(180deg, #E8BAFF 0%, #C9A9E9 40%, #9B72CF 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
-            filter: 'drop-shadow(0 0 20px rgba(255,215,0,0.5))',
             letterSpacing: '0.05em',
           }}
         >
@@ -84,13 +81,13 @@ export default function Page() {
         </h1>
         <div
           className="text-xs tracking-[0.5em] uppercase mt-2"
-          style={{ color: 'rgba(255,215,0,0.5)', fontFamily: 'var(--font-cinzel)' }}
+          style={{ color: '#C9A9E9', fontFamily: 'var(--font-cinzel)' }}
         >
           ✦ ✦ ✦
         </div>
         <p
           className="mt-3 text-sm"
-          style={{ color: 'rgba(255,215,0,0.4)', fontFamily: 'var(--font-cinzel)' }}
+          style={{ color: '#8A8A9A', fontFamily: 'var(--font-cinzel)' }}
         >
           행운을 시험해 보세요
         </p>
@@ -109,9 +106,9 @@ export default function Page() {
       {/* Footer */}
       <footer
         className="mt-12 text-xs relative z-10"
-        style={{ color: 'rgba(255,215,0,0.2)', fontFamily: 'var(--font-cinzel)' }}
+        style={{ color: '#C9C9D9', fontFamily: 'var(--font-cinzel)' }}
       >
-        © Cat Roulette Casino
+        © Cat Roulette
       </footer>
 
       {/* Winner banner */}

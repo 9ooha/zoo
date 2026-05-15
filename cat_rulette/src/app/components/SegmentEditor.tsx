@@ -1,14 +1,14 @@
 'use client';
 
 const SEGMENT_COLORS = [
-  '#8B0000',
-  '#1B4332',
-  '#1A237E',
-  '#4A148C',
-  '#BF360C',
-  '#004D40',
-  '#0D47A1',
-  '#880E4F',
+  '#FFB3BA',
+  '#BAFFC9',
+  '#BAE1FF',
+  '#E8BAFF',
+  '#FFDFBA',
+  '#FFFFBA',
+  '#FFB3DE',
+  '#B5EAD7',
 ];
 
 interface SegmentEditorProps {
@@ -27,17 +27,16 @@ export function SegmentEditor({ segments, onChange }: SegmentEditorProps) {
     <div
       className="rounded-2xl p-6 w-full max-w-xs"
       style={{
-        background: 'linear-gradient(135deg, #0d0d1f 0%, #1a1a2e 100%)',
-        border: '1px solid rgba(255,215,0,0.25)',
-        boxShadow: '0 0 40px rgba(255,215,0,0.05), inset 0 1px 0 rgba(255,215,0,0.1)',
+        background: '#fafafa',
+        border: '1px solid #E8D5F5',
+        boxShadow: '0 4px 20px rgba(201,169,233,0.1)',
       }}
     >
       <h2
         className="text-lg font-bold mb-5 text-center tracking-wider"
         style={{
           fontFamily: 'var(--font-cinzel)',
-          color: '#FFD700',
-          textShadow: '0 0 10px rgba(255,215,0,0.5)',
+          color: '#9B72CF',
         }}
       >
         ✦ Edit Segments ✦
@@ -51,14 +50,13 @@ export function SegmentEditor({ segments, onChange }: SegmentEditorProps) {
               className="flex-shrink-0 w-5 h-5 rounded-sm"
               style={{
                 backgroundColor: SEGMENT_COLORS[i % SEGMENT_COLORS.length],
-                border: '1px solid rgba(255,215,0,0.4)',
-                boxShadow: `0 0 6px ${SEGMENT_COLORS[i % SEGMENT_COLORS.length]}80`,
+                border: '1px solid rgba(0,0,0,0.05)',
               }}
             />
             {/* Segment number */}
             <span
               className="flex-shrink-0 text-xs w-4 text-center"
-              style={{ color: 'rgba(255,215,0,0.5)', fontFamily: 'var(--font-cinzel)' }}
+              style={{ color: '#B0B0C0', fontFamily: 'var(--font-cinzel)' }}
             >
               {i + 1}
             </span>
@@ -70,17 +68,17 @@ export function SegmentEditor({ segments, onChange }: SegmentEditorProps) {
               onChange={(e) => handleChange(i, e.target.value)}
               className="flex-1 rounded px-3 py-2 text-sm outline-none transition-all duration-200"
               style={{
-                background: 'rgba(255,255,255,0.05)',
-                border: '1px solid rgba(255,215,0,0.2)',
-                color: '#f9fafb',
+                background: '#ffffff',
+                border: '1px solid #E0E0E8',
+                color: '#4A4A5A',
                 fontFamily: 'var(--font-inter)',
               }}
               onFocus={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,215,0,0.7)';
-                e.currentTarget.style.boxShadow = '0 0 8px rgba(255,215,0,0.2)';
+                e.currentTarget.style.borderColor = '#C9A9E9';
+                e.currentTarget.style.boxShadow = '0 0 6px rgba(201,169,233,0.2)';
               }}
               onBlur={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,215,0,0.2)';
+                e.currentTarget.style.borderColor = '#E0E0E8';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             />
@@ -90,7 +88,7 @@ export function SegmentEditor({ segments, onChange }: SegmentEditorProps) {
 
       <p
         className="mt-4 text-center text-xs"
-        style={{ color: 'rgba(255,215,0,0.3)' }}
+        style={{ color: '#C0C0D0' }}
       >
         최대 20자
       </p>

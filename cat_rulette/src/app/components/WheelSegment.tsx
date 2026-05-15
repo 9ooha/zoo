@@ -16,8 +16,8 @@ export function WheelSegment({ path, fill, label, labelX, labelY, labelAngle, in
       <path
         d={path}
         fill={fill}
-        stroke="#0a0a1a"
-        strokeWidth="0.015"
+        stroke="#ffffff"
+        strokeWidth="0.02"
       />
       {lines.map((line, i) => (
         <text
@@ -25,13 +25,13 @@ export function WheelSegment({ path, fill, label, labelX, labelY, labelAngle, in
           x={labelX}
           y={labelY + (i - (lines.length - 1) / 2) * 0.14}
           fontSize="0.105"
-          fill="#FFD700"
+          fill="#4A4A5A"
           textAnchor="middle"
           dominantBaseline="middle"
           transform={`rotate(${labelAngle}, ${labelX}, ${labelY})`}
           fontFamily="var(--font-cinzel)"
           fontWeight="bold"
-          style={{ textShadow: "0 0 4px rgba(0,0,0,0.8)" }}
+          style={{ textShadow: "0 0 3px rgba(255,255,255,0.8)" }}
         >
           {line}
         </text>

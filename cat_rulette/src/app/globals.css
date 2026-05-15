@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --gold: #FFD700;
-  --gold-dark: #B8860B;
-  --gold-dim: rgba(255, 215, 0, 0.3);
+  --accent: #C9A9E9;
+  --accent-light: #E8D5F5;
+  --accent-dark: #9B72CF;
+  --text-dark: #4A4A5A;
+  --text-muted: #8A8A9A;
 }
 
 @theme inline {
-  --color-background: #030712;
-  --color-foreground: #f9fafb;
+  --color-background: #ffffff;
+  --color-foreground: #4A4A5A;
   --font-sans: var(--font-inter);
   --font-display: var(--font-cinzel);
 
@@ -24,8 +26,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 10px #FFD700, 0 0 20px rgba(255, 215, 0, 0.3); }
-  50% { box-shadow: 0 0 30px #FFD700, 0 0 60px rgba(255, 215, 0, 0.6), 0 0 90px rgba(255, 215, 0, 0.2); }
+  0%, 100% { box-shadow: 0 0 8px rgba(201, 169, 233, 0.3), 0 0 16px rgba(201, 169, 233, 0.15); }
+  50% { box-shadow: 0 0 20px rgba(201, 169, 233, 0.5), 0 0 40px rgba(201, 169, 233, 0.25); }
 }
 
 @keyframes confetti-fall {
@@ -34,7 +36,7 @@
 }
 
 body {
-  background: #030712;
-  color: #f9fafb;
+  background: #ffffff;
+  color: #4A4A5A;
   font-family: var(--font-inter), Arial, sans-serif;
 }
