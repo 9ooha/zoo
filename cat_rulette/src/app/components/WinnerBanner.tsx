@@ -25,7 +25,7 @@ export function WinnerBanner({ winner, color, onClose }: WinnerBannerProps) {
       ref={overlayRef}
       className="fixed inset-0 flex items-center justify-center z-50 cursor-pointer"
       style={{
-        background: 'rgba(0,0,0,0.8)',
+        background: 'rgba(255,255,255,0.85)',
         backdropFilter: 'blur(8px)',
       }}
       onClick={onClose}
@@ -36,7 +36,7 @@ export function WinnerBanner({ winner, color, onClose }: WinnerBannerProps) {
           key={i}
           className="absolute w-2 h-2 rounded-sm pointer-events-none"
           style={{
-            background: ['#FFD700', '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4'][i % 5],
+            background: ['#FFB3BA', '#BAFFC9', '#BAE1FF', '#E8BAFF', '#FFDFBA'][i % 5],
             left: `${5 + (i * 4.5) % 90}%`,
             top: `${10 + (i * 7) % 30}%`,
             animation: `confetti-fall ${0.8 + (i % 4) * 0.3}s ease-in ${(i % 6) * 0.1}s forwards`,
@@ -48,18 +48,18 @@ export function WinnerBanner({ winner, color, onClose }: WinnerBannerProps) {
       <div
         className="relative flex flex-col items-center gap-6 rounded-3xl px-12 py-10 text-center max-w-sm mx-4"
         style={{
-          background: 'linear-gradient(135deg, #0d0d1f 0%, #1a1a2e 50%, #0d0d1f 100%)',
-          border: '2px solid #FFD700',
-          boxShadow: '0 0 60px #FFD700, 0 0 120px rgba(255,215,0,0.3), inset 0 1px 0 rgba(255,215,0,0.2)',
+          background: '#ffffff',
+          border: '2px solid #E8D5F5',
+          boxShadow: '0 8px 40px rgba(201,169,233,0.3), 0 0 80px rgba(201,169,233,0.1)',
           animation: 'winner-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
         }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Corner decorations */}
-        <div className="absolute top-3 left-3 text-yellow-400 text-lg opacity-50">✦</div>
-        <div className="absolute top-3 right-3 text-yellow-400 text-lg opacity-50">✦</div>
-        <div className="absolute bottom-3 left-3 text-yellow-400 text-lg opacity-50">✦</div>
-        <div className="absolute bottom-3 right-3 text-yellow-400 text-lg opacity-50">✦</div>
+        <div className="absolute top-3 left-3 text-purple-300 text-lg opacity-50">✦</div>
+        <div className="absolute top-3 right-3 text-purple-300 text-lg opacity-50">✦</div>
+        <div className="absolute bottom-3 left-3 text-purple-300 text-lg opacity-50">✦</div>
+        <div className="absolute bottom-3 right-3 text-purple-300 text-lg opacity-50">✦</div>
 
         {/* Trophy icon */}
         <div
@@ -71,7 +71,7 @@ export function WinnerBanner({ winner, color, onClose }: WinnerBannerProps) {
         >
           <Trophy
             size={56}
-            style={{ color: '#FFD700', filter: 'drop-shadow(0 0 12px #FFD700)' }}
+            style={{ color: '#C9A9E9', filter: 'drop-shadow(0 0 8px rgba(201,169,233,0.4))' }}
           />
         </div>
 
@@ -81,7 +81,7 @@ export function WinnerBanner({ winner, color, onClose }: WinnerBannerProps) {
             className="text-sm tracking-[0.3em] uppercase mb-2"
             style={{
               fontFamily: 'var(--font-cinzel)',
-              color: 'rgba(255,215,0,0.7)',
+              color: '#B0B0C0',
             }}
           >
             🎉 Winner! 🎉
@@ -90,8 +90,7 @@ export function WinnerBanner({ winner, color, onClose }: WinnerBannerProps) {
             className="text-3xl font-black leading-tight"
             style={{
               fontFamily: 'var(--font-cinzel)',
-              color: '#FFD700',
-              textShadow: '0 0 20px rgba(255,215,0,0.8)',
+              color: '#9B72CF',
               wordBreak: 'break-word',
             }}
           >
@@ -114,16 +113,16 @@ export function WinnerBanner({ winner, color, onClose }: WinnerBannerProps) {
           className="px-8 py-3 rounded-full font-bold tracking-widest uppercase text-sm transition-all duration-200 cursor-pointer"
           style={{
             fontFamily: 'var(--font-cinzel)',
-            background: 'linear-gradient(180deg, #FFD700 0%, #B8860B 100%)',
-            color: '#1a0a00',
-            boxShadow: '0 0 15px rgba(255,215,0,0.4)',
+            background: 'linear-gradient(180deg, #E8BAFF 0%, #C9A9E9 100%)',
+            color: '#ffffff',
+            boxShadow: '0 4px 15px rgba(201,169,233,0.3)',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.boxShadow = '0 0 30px rgba(255,215,0,0.8)';
+            e.currentTarget.style.boxShadow = '0 4px 25px rgba(201,169,233,0.5)';
             e.currentTarget.style.transform = 'scale(1.05)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.boxShadow = '0 0 15px rgba(255,215,0,0.4)';
+            e.currentTarget.style.boxShadow = '0 4px 15px rgba(201,169,233,0.3)';
             e.currentTarget.style.transform = 'scale(1)';
           }}
         >

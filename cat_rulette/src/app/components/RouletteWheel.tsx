@@ -4,14 +4,14 @@ import { useRef, useState } from 'react';
 import { WheelSegment } from './WheelSegment';
 
 const SEGMENT_COLORS = [
-  '#8B0000', // deep red
-  '#1B4332', // dark green
-  '#1A237E', // deep blue
-  '#4A148C', // deep purple
-  '#BF360C', // dark orange-red
-  '#004D40', // dark teal
-  '#0D47A1', // royal blue
-  '#880E4F', // dark pink
+  '#FFB3BA', // soft pink
+  '#BAFFC9', // mint
+  '#BAE1FF', // sky blue
+  '#E8BAFF', // lavender
+  '#FFDFBA', // peach
+  '#FFFFBA', // soft yellow
+  '#FFB3DE', // rose
+  '#B5EAD7', // sage
 ];
 
 const NUM_SEGMENTS = 8;
@@ -79,20 +79,20 @@ export function RouletteWheel({ segments, onWinner }: RouletteWheelProps) {
         <div
           className="absolute inset-0 rounded-full pointer-events-none"
           style={{
-            boxShadow: '0 0 40px rgba(255,215,0,0.4), 0 0 80px rgba(255,215,0,0.15), inset 0 0 40px rgba(255,215,0,0.05)',
+            boxShadow: '0 0 30px rgba(201,169,233,0.25), 0 0 60px rgba(201,169,233,0.1)',
             borderRadius: '50%',
           }}
         />
 
-        {/* Gold border ring */}
+        {/* Border ring */}
         <div
           className="absolute rounded-full pointer-events-none"
           style={{
-            inset: '-6px',
-            border: '6px solid',
-            borderColor: '#FFD700',
+            inset: '-5px',
+            border: '5px solid',
+            borderColor: '#C9A9E9',
             borderRadius: '50%',
-            boxShadow: '0 0 20px #FFD700, inset 0 0 20px rgba(255,215,0,0.1)',
+            boxShadow: '0 0 15px rgba(201,169,233,0.3)',
           }}
         />
 
@@ -101,7 +101,7 @@ export function RouletteWheel({ segments, onWinner }: RouletteWheelProps) {
           className="absolute rounded-full pointer-events-none z-10"
           style={{
             inset: '2px',
-            border: '3px solid rgba(255,215,0,0.3)',
+            border: '2px solid rgba(201,169,233,0.2)',
             borderRadius: '50%',
           }}
         />
@@ -140,8 +140,8 @@ export function RouletteWheel({ segments, onWinner }: RouletteWheelProps) {
               );
             })}
             {/* Center circle */}
-            <circle cx="0" cy="0" r="0.12" fill="#1a1a2e" stroke="#FFD700" strokeWidth="0.025" />
-            <circle cx="0" cy="0" r="0.06" fill="#FFD700" />
+            <circle cx="0" cy="0" r="0.12" fill="#ffffff" stroke="#C9A9E9" strokeWidth="0.025" />
+            <circle cx="0" cy="0" r="0.06" fill="#C9A9E9" />
           </svg>
         </div>
 
@@ -152,20 +152,20 @@ export function RouletteWheel({ segments, onWinner }: RouletteWheelProps) {
             top: -18,
             left: '50%',
             transform: 'translateX(-50%)',
-            filter: 'drop-shadow(0 0 6px #FFD700)',
+            filter: 'drop-shadow(0 0 4px rgba(201,169,233,0.5))',
           }}
         >
           <svg width="28" height="42" viewBox="0 0 28 42">
             <polygon
               points="14,40 1,2 27,2"
-              fill="#FFD700"
-              stroke="#B8860B"
+              fill="#C9A9E9"
+              stroke="#9B72CF"
               strokeWidth="1"
             />
             <polygon
               points="14,36 5,6 23,6"
-              fill="#FFF8DC"
-              opacity="0.4"
+              fill="#E8D5F5"
+              opacity="0.5"
             />
           </svg>
         </div>
@@ -178,14 +178,14 @@ export function RouletteWheel({ segments, onWinner }: RouletteWheelProps) {
         className="relative px-14 py-5 rounded-full font-black text-xl tracking-widest uppercase disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all duration-200 select-none"
         style={{
           background: isSpinning
-            ? 'linear-gradient(180deg, #B8860B 0%, #8B6914 100%)'
-            : 'linear-gradient(180deg, #FFD700 0%, #B8860B 100%)',
-          color: '#1a0a00',
+            ? 'linear-gradient(180deg, #D4B8E8 0%, #C9A9E9 100%)'
+            : 'linear-gradient(180deg, #E8BAFF 0%, #C9A9E9 100%)',
+          color: '#ffffff',
           fontFamily: 'var(--font-cinzel)',
           animation: isSpinning ? 'none' : 'pulse-glow 2s ease-in-out infinite',
           boxShadow: isSpinning
-            ? '0 4px 15px rgba(0,0,0,0.5)'
-            : '0 0 20px rgba(255,215,0,0.6), 0 4px 15px rgba(0,0,0,0.3)',
+            ? '0 4px 12px rgba(0,0,0,0.1)'
+            : '0 0 15px rgba(201,169,233,0.4), 0 4px 12px rgba(0,0,0,0.08)',
           transform: isSpinning ? 'scale(0.97)' : 'scale(1)',
         }}
       >
